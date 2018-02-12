@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html style="overflow: hidden" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script
+            src="http://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script >
+        $(function(){
+            $('.menuToggle').on('click', function(){
+                $('.menu').toggle(300, function(){
+                    if($(this).css('display') === 'none'){
+                        $(this).removeAttribute('style');
+                    }
+                });
+            });
+        });</script>
+
+</head>
+
+<!DOCTYPE html>
+<html lang="en" style="overflow: hidden">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<div class= "background"><img style="margin-top: 410px" src="/images/baby.png"></div>
+<nav>
+    <div class="wrapper">
+        <div class="menuToggle"><img src="img/menu.png" alt="menu"></div>
+        <ul class="menu clearfix">
+
+            <li><div class="dropdown">
+                <a href="#">PAEDRIATRIC DRUG LOOKUP</a>
+                <div class="dropdown-content">
+                    <button class="accordion">Look up by Drug-Class</button>
+                    <div class="panel">
+                        <p>5-Aminosalicylic Acid Derivative</p>
+                        <p>5-HT 3 Receptor Antagonist</p>
+                        <p>Adrenal Corticosteroid</p>
+
+
+                    </div>
+                    <button class="accordion">Drug Generic Name</button>
+                    <div class="panel">
+                        <p>Abacavir</p>
+                        <p>Abacavir and Lamivudine</p>
+                        <p>Abatacept</p>
+                        <p>Bacitracin (Ophthalmic)</p>
+                        <p>Betaine</p>
+                        <p>Biotin</p>
+
+
+
+                    </div>
+
+
+
+
+
+
+            <li><div class="dropdown">
+                <a href="#">SPECIAL NEEDS</a>
+                <div class="dropdown-content">
+                    <p>Find a care-giver</p>
+
+                    <p>Find a support group</p>
+                    <p> Day care center</p>
+                    <p>Tutoring</p>
+                </div>
+            </div></li>
+            <li><div class="dropdown">
+                <a href="#">IMMUNIZATION</a>
+                <div class="dropdown-content">
+                    <button class="accordion">Birth to 15 months</button>
+                    <div class="panel">
+                        <button class="accordion">1 month</button>
+                        <div class="panel">
+                            <a href="vaccine" style="font-size:medium"> <p> Hepatitis B1 (HepB)</p></a>
+                        </div>
+
+                            <button class="accordion">2 months</button>
+                            <div class="panel">
+                              <a href="">  <p style="font-size:medium">RV1 (2-dose series);</p></a>
+                                <a href="">  <p style="font-size:medium">Haemophilus influenzae type b4 (Hib)</p></a>
+                                <a href=""style="font-size:medium">  <p >Pneumococcal conjugate5 (PCV13)</p></a>
+                            </div>
+                        <button class="accordion">4 months</button>
+                        <div class="panel">
+                            <p>RV1 (2-dose series); RV5 (3-dose series)</p>
+                            <p>Haemophilus influenzae type b4 (Hib)</p>
+                            <p>Influenza7 (IIV)</p>
+                        </div>
+                        <button class="accordion">6 months</button>
+                        <div class="panel">
+                            <p>RV1 (2-dose series); RV5 (3-dose series)</p>
+                            <p>Influenza7 (IIV))</p>
+                            <p>Measles, mumps, rubella8 (MMR))</p>
+                        </div>
+                        <button class="accordion">9 months</button>
+                        <div class="panel">
+                            <p>RV1 (2-dose series); RV5 (3-dose series)</p>
+                            <p>Haemophilus influenzae type b4 (Hib)</p>
+                            <p>Measles, mumps, rubella8 (MMR)</p>
+                        </div>
+                        <button class="accordion">12 months</button>
+                        <div class="panel">
+                            <p>Varicella9 (VAR)</p>
+
+                        </div>
+                        <button class="accordion">15 months</button>
+                        <div class="panel">
+                            <p>Hepatitis A10 (HepA)</p>
+                            <p>Meningococcal B11</p>
+                            <p>Pneumococcal conjugate5 (PCV13)</p>
+                        </div>
+                    </div>
+
+
+                    <button class="accordion">15 months to 18 years</button>
+                    <div class="panel">
+                        <button class="accordion">18 month</button>
+                        <div class="panel">
+                            <p><a href="">Hepatitis B1 (HepB)</a></p>
+                        </div>
+                        <button class="accordion">18 month to 23 months</button>
+                        <div class="panel">
+                            <p>Hepatitis B1 (HepB)</p>
+                        </div>
+
+
+
+        </ul>
+
+    </div>
+</nav>
+
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/{{this._id}}">Find a Physician </a>
+    <a href="#">Home</a>
+    <a href="therapyCareView'">Get-Therapy</a>
+    <a href="userLandingPage">My-Profile</a>
+    <a href="resources">Resources</a>
+
+    <a href="login">Sign-Out</a>
+
+
+
+
+
+
+</div>
+
+
+<span style="font-size:30px; margin-top:-10%; padding:1%; margin-left:-1%;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function(){
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        }
+    }
+</script>

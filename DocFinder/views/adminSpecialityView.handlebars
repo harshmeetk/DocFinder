@@ -1,0 +1,53 @@
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip({placement: "bottom"});
+    });
+
+    var patiendId = function () {
+        var url = window.location.href;
+        var id = url.split('&')[1].split('=')[1];
+        //document.getElementById('patiendId').value=id;
+    }
+</script>
+
+<body onload="patiendId()">
+
+<div onload="patiendId()">
+{{#each data}}
+        <div class="media">
+            <ul class="nobullet">
+                <li><img class="d-flex mr-3 imageWidth" src="{{this.doc_image}}" alt="Doctor"></li>
+                <h5 class="mt-0"><br>{{this.doc_name}}, {{this.doc_title}}</h5>
+                <li>{{this.doc_speciality}}</li>
+                <li>{{this.doc_street}},</li>
+                <li>{{this.doc_city}},</li>
+                <li>{{this.doc_state}}</li>
+            </ul>
+
+            <div class="media-body">
+                <ul class="nobullet">
+                    <li><p>{{this.doc_edu}}</p></li>
+                </ul>
+                <div class="pure-g ">
+                    <div class="pure-u-1-3 "><a data-toggle="tooltip" title="Average Patient Rating"> <img
+                            src="{{this.doc_rating}}"></a></div>
+                    <div class="pure-u-1-3"><a data-toggle="tooltip"
+                                               title="Insurance Plans Supported by Dr. {{this.doc_name}}"> <i
+                            class="fa fa-medkit fa-4x"
+                            aria-hidden="true"></i><strong>{{this.doc_insurance}}</strong></a>
+                    </div>
+                    <div class="pure-u-1-3 "><a data-toggle="tooltip" title="Contact Number of Dr. {{this.doc_name}}"><i
+                            class="fa fa-phone fa-4x" aria-hidden="true"></i>  {{this.doc_contact}}</a></div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+{{/each}}
+
+</div>
+</body>

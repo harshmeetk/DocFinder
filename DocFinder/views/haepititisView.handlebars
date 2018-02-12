@@ -1,0 +1,72 @@
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<p>Hepatitis B (HepB) vaccine. (Minimum age: birth) <br>
+  <br> <b> Routine vaccination: At birth</b></br>
+
+
+    Administer monovalent HepB vaccine to all newborns within 24 hours of birth.
+    For infants born to hepatitis B surface antigen (HBsAg)–positive mothers, administer HepB vaccine and 0.5 mL of hepatitis B immune globulin (HBIG) within 12 hours of birth. These infants should be tested for HBsAg and antibody to HBsAg (anti–HBs) at age 9 through 12 months (preferably at the next well–child visit) or 1 to 2 months after completion of the HepB series if the series was delayed.
+    If mother’s HBsAg status is unknown, within 12 hours of birth, administer HepB vaccine regardless of birth weight. For infants weighing less than 2,000 grams, administer HBIG in addition to HepB vaccine within 12 hours of birth. Determine mother’s HBsAg status as soon as possible and, if mother is HBsAg–positive, also administer HBIG to infants weighing 2,000 grams or more as soon as possible, but no later than age 7 days.<br>
+   <br><b> Doses following the birth dose</b></br>
+
+    The second dose should be administered at age 1 or 2 months. Monovalent HepB vaccine should be used for doses administered before age 6 weeks.
+    Infants who did not receive a birth dose should receive 3 doses of a HepB–containing vaccine on a schedule of 0, 1 to 2 months, and 6 months, starting as soon as feasible. See Catch–up Schedule.
+    Administer the second dose 1 to 2 months after the first dose (minimum interval of 4 weeks); administer the third dose at least 8 weeks after the second dose AND at least 16 weeks after the first dose. The final (third or fourth) dose in the HepB vaccine series should be administered no earlier than age 24 weeks.
+    Administration of a total of 4 doses of HepB vaccine is permitted when a combination vaccine containing HepB is administered after the birth dose.
+    <br><br><b>Catch–up vaccination:</b></br>
+
+    Unvaccinated persons should complete a 3–dose series.
+    A 2–dose series (doses separated by at least 4 months) of adult formulation Recombivax HB is licensed for use in children aged 11 through 15 years.</p>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                zoomEnabled: true,
+                theme: "light2",
+                title:{
+                    text: "Recommended Immunization Schedule for Children Aged 18 months"
+                },
+                axisX: {
+                    title:"Months",
+                    suffix: "months",
+                    minimum: 0,
+                    maximum: 18,
+                    gridThickness: 2
+                },
+                axisY:{
+                    title: "Dosage",
+                    suffix: ""
+                },
+                data: [{
+                    type: "bubble",
+                    toolTipContent: "<b>{name}</b><br/>Dosage: {x}mg  <br/>",
+                    dataPoints: [
+                        { x: 1, y:1, z:304.09, name:"Hepatitis B1 (HepB)" },
+                        { x: 17.4, y: 2.647, z:2.64, name:"Diphtheria, tetanus, & acellular pertussis3" },
+                        { x: 8.6, y: 2.154, z:141.95, name:"Haemophilus influenzae type b4 (Hib)" },
+                        { x: 52.98, y: 1.797, z:1190.86, name:"Pneumococcal conjugate5 (PCV13)" },
+                        { x: 4.3, y: 1.735, z:26.16, name:"Inactivated poliovirus" },
+                        { x: 1.21, y: 1.41, z:39.71, name:"Influenza" },
+                        { x: 5.7, y: .993, z:48.79, name:"Measles, mumps, rubella" },
+                        { x: 13.1, y: 1.02, z:110.42, name:"Varicella" },
+                        { x: 2.4, y: .676, z:33.31, name:"Meningococcal" },
+                        { x: 2.8, y: .293, z:64.37, name:"Human papillomavirus" },
+                        { x: 3.8, y: .46, z:127.70, name:"Pneumococcal polysaccharide" },
+
+                    ]
+                }]
+            });
+            chart.render();
+
+        }
+    </script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

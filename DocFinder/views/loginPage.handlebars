@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html style="overflow: hidden" lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+
+<div id="parent_div" >
+    <div class= "background"></div>
+    <div class="signUpMargin">
+        <h1 class="h1Style">Login to your account </h1>
+        <!--<h3 class="h3Style">New Member?<a href>SignUp</a></h3>-->
+
+
+
+        <form method="post" action="/checkCredentials" class="marginLeft">
+            <table >
+
+                <tr><td>Enter your Email</td></tr>
+                <tr><td><input name="username" class="signUpInput " type="email" placeholder="email" required></td></tr>
+
+
+
+                <tr><td>Enter password</td></tr>
+                <tr><td><input  name="password" class="signUpInput" type="password" placeholder="password" required></td></tr>
+
+
+                <tr><td><button type="submit" class="w3-button w3-teal signUpSubmit"><a>Sign In</a> </button>   </td></tr>
+                <tr><td><hr></td></tr>
+
+                <tr><td><h3 id="h3">New to DocFinder?</h3></td></tr>
+                <tr><td><button class="w3-button w3-teal signUpSubmit"><a href="newSignUp">Sign Up</a> </button>   </td></tr>
+
+            </table>
+        </form>
+
+    </div>
+
+</div>
+
+
+

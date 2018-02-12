@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+
+<div id="parent_div" >
+    <div class= "background"><img src="images/doctor.jpg"></div>
+    <div class="signUpMargin">
+        <h1 class="h1Style">Login to your account </h1>
+        <!--<h3 class="h3Style">New Member?<a href>SignUp</a></h3>-->
+
+    </div>
+</div>
+
+<h1>Here are your currently booked appointments:</h1>
+
+<div class="card" style="width: 20rem;">
+    <img class="card-img-top imageWidth" src="{{patient_appointment.doc_image}}" alt="Card image cap">
+    <div class="card-block">
+        <h4 class="card-title">{{patient_appointment.doc_name}}</h4>
+        <h4 class="card-title">{{patient_appointment.doc_contact}}</h4>
+
+        <h4 class="card-title">{{patient_appointment.doc_city}}</h4>
+        <h4 class="card-title">{{patient_appointment.doc_state}}</h4>
+        <h4 class="card-title">{{patient_appointment.doc_street}}</h4>
+        <h4 class="card-title">{{patient_appointment.doc_zip}}</h4>
+        <h4 class="card-title">{{patient_appointment.doc_speciality}}</h4>
+
+    </div>
+
+</div>

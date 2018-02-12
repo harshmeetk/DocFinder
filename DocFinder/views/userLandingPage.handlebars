@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-y: hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<div>
+
+   <h4 style=" float:right;margin-top: -30px; margin-right: 30px"> {{#each data}}Welcome {{this.patient_first_name}}! </h4>
+
+        <div class="wrapper">
+            <div class="menuToggle"><img src="img/menu.png" alt="menu"></div>
+            <ul class="menu clearfix">
+                <li> <a href="#">MY PROFILE</a></li>
+                <li><a href="#">DIAGNOSIS DICTIONARY</a></li>
+                <li><a href="">EDIT INFORMATION</a></li>
+                <li><a href="/{{this._id}}">FIND PHYSICIANS</a></li>
+                  <li>  <a href="#">SEARCH HISTORY</a></li>
+                <li><a href="#">MY LAB REPORT</a>
+                </li>
+            </ul>
+        </div></li>
+            </ul>
+        </div>
+    {{/each}}
+<div class="profile" style="float: left;margin-left:2%">
+
+{{!--photoSubmitAlign--}}
+{{#each data}}
+<table class="td">
+    <tr>
+        <td class="td"><img src="/images/user.png"><p style="display: inline" class="marginSpan"></p></td>
+    </tr>
+
+    <td width="100"> Name <p style="display: inline" class="marginSpan">{{this.patient_first_name}}
+        {{this.patient_middle_name}} {{this.patient_last_name}}</p></td>
+        </tr>
+        <tr>
+            <td class="td">GENDER:<p style="display: inline" class="marginSpan">{{this.patient_Sex}}</p></td>
+        </tr>
+
+        <tr>
+            <td>EMAIL:<p style="display: inline" class="marginSpan">{{this.patient_Email}}</p></td>
+        </tr>
+
+        <tr>
+            <td class="td">DATE OF BIRTH: <p style="display: inline" class="marginSpan">{{this.patient_DateOfBirthMonth}}/ {{this.patient_DateOfBirthDay}} /{{this.patient_DateOfBirthYear}}</p></td>
+        </tr>
+
+        <tr>
+            <td class="td">INSURANCE:<p style="display: inline" class="marginSpan">{{this.patient_Insurance}}</p></td>
+        </tr>
+</table>
+{{/each}}
+    </div>
+<div class="borderSeperator">
+</div>
+<div class="profile" >
+{{#each data}}
+<div class="card" style="width: 55rem;">
+    {{#each this.patient_appointment}}
+        <ul class="list-group">
+            <li class="list-group-item" style="background-color: teal"> <h4 style="color: white">Scheduled appointments</h4></li>
+            <li class="list-group-item" style="background-color:whitesmoke;height: 90px" ><img class="imageWidth" src="{{this.doc_image}}"><p> Dr.{{this.doc_name}}</p> </li>
+            <li class="list-group-item">Doctor Speciality:  {{this.doc_speciality}} </li>
+            <li class="list-group-item" style="color: red">YOUR APPOINTMENT TIME:{{this.slot}}</li>
+            <li class="list-group-item">Doctor Contact:{{this.doc_contact}}</li>
+            <li class="list-group-item">Doctor City:{{this.doc_city}}</li>
+            <li class="list-group-item">Doctor state:{{this.doc_state}}</li>
+            <li class="list-group-item">Doctor Street:{{this.doc_street}}</li>
+            <li class="list-group-item">Doctor Zip:{{this.doc_zip}}</li>
+            <li class="list-group-item"> <button id="goal" onclick="return">Reschedule</button></li>
+        </ul>
+    {{/each}}
+
+{{/each}}
+
+    </div>
+
+
+
+
+
+
+</div>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/{{this._id}}">Find a Physician </a>
+    <a href="#">Home</a>
+    <a href="baby">Paediatric Care</a>
+    <a href="therapyCareView">Get Therapy</a>
+    <a href="resources">Resources</a>
+    <a href="#">Health Blogs</a>
+    <a href="#">Reschedule Appointments</a>
+
+
+    <a href="login">Sign-out </a>
+</div>
+
+<span style="font-size:30px; margin-top:-10%; padding:1%; margin-left:-1%;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+
+
+
+<div id="goals" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modalHeader" style="text-align: center;">APPOINTMENT : CREATE NEW </div>
+
+        <div class="month">
+            <h2 style="text-align: center">                    November 2017
+            </h2>
+
+        </div>
+
+        <ul class="weekdays">
+            <li>Mo</li>
+            <li>Tu</li>
+            <li>We</li>
+            <li>Th</li>
+            <li>Fr</li>
+            <li>Sa</li>
+            <li>Su</li>
+        </ul>
+
+        <ul class="days">
+            <li >1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>11</li> <li>12</li> <li>13</li> <li>14</li> <li>15</li> <li>16</li> <li>17</li> <li>18</li> <li>19</li> <li>20</li>
+            <li>21</li> <li>22</li> <li>23</li> <li>24</li> <li>25</li> <li>26</li> <li>27</li> <li>28</li> <li>29</li>
+            <li>30</li>
+        </ul>
+
+    </div>
+</div>
+
+
+<script>
+    var modal5 = document.getElementById('goals');
+
+    var btn5 = document.getElementById("goal");
+
+    var span5 = document.getElementsByClassName("close")[0];
+
+    btn5.onclick = function() {
+        modal5.style.display = "block";
+    };
+
+    span5.onclick = function() {
+        modal5.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal5.style.display = "none";
+        }
+    } ;
+</script>
+</html>

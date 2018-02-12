@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html style="overflow: hidden" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <div id="fb-root"></div>
+
+</head>
+<body><div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script></body>
+
+
+<div id="parent_div" >
+    {{!--<div class= "background"><img src="images/doctor.jpg"></div>--}}
+    <div class="signUpMargin">
+        <h1 class="h1Style">Create an account </h1>
+
+
+
+
+        <form class="formSignUpStyle" method="post" action="/patientAdd" name="myForm" onsubmit="return EmailValidation()">
+            <table>
+
+                <tr><td> Enter your Email</td></tr>
+
+                <tr><td><input class="signUpInput" type="text" name="pemail" id="email"  required ></td><td>  <i class="fa fa-star marginStar" aria-hidden="true"></i></td></tr>
+
+
+                <tr><td>Create a password</td></tr>
+                <tr><td><input class="signUpInput" type="password" name="pcode" required></td><td><i class="fa fa-star marginStar" aria-hidden="true"></i></td>></tr>
+
+                <tr><td>Your Name</td></tr>
+                <tr><td><input type="text" placeholder="first" name="pfirst" required></td><td><input type="text" placeholder="middle"name="pmiddle" required ></td><td><input type="text" placeholder="last" name="plast" required ></td><td><i class="fa fa-star marginStar1" aria-hidden="true"></i></td></tr>
+
+                <tr><td>Your date of birth</td></tr>
+                <tr><td>
+
+                    <select name="pmonth" required>
+                    <option value="January">January</option>
+                    <option value="Febuary">Febuary</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                    </select></td>
+
+          <td>
+               <select name="pday" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                </select>
+          </td>
+<td>
+                <select name="pyear" required>
+                    <option value="1993">1993</option>
+                    <option value="1992">1992</option>
+                    <option value="1991">1991</option>
+                    <option value="1990">1990</option>
+                    <option value="1989">1989</option>
+                    <option value="1988">1988</option>
+                    <option value="1987">1987</option>
+                    <option value="1986">1986</option>
+                    <option value="1985">1985</option>
+                    <option value="1984">1984</option>
+                    <option value="1983">1983</option>
+                    <option value="1982">1982</option>
+                    <option value="1981">1981</option>
+                    <option value="1980">1980</option>
+                    <option value="1979">1979</option>
+                    <option value="1978">1978</option>
+                    <option value="1977">1977</option>
+                    <option value="1976">1976</option>
+                    <option value="1975">1975</option>
+                    <option value="1974">1974</option>
+                    <option value="1973">1973</option>
+                    <option value="1972">1972</option>
+                    <option value="1971">1971</option>
+                    <option value="1970">1970</option>
+                    <option value="1969">1969</option>
+                    <option value="1968">1968</option>
+                    <option value="1967">1967</option>
+                    <option value="1966">1966</option>
+                    <option value="1965">1965</option>
+                    <option value="1964">1964</option>
+                    <option value="1963">1963</option>
+                    <option value="1962">1962</option>
+                    <option value="1961">1961</option>
+                    <option value="1960">1960</option>
+                    <option value="1959">1959</option>
+                    <option value="1958">1958</option>
+                    <option value="1957">1957</option>
+                    <option value="1956">1956</option>
+                    <option value="1955">1955</option>
+                    <option value="1954">1954</option>
+                    <option value="1953">1953</option>
+                    <option value="1952">1952</option>
+                    <option value="1951">1951</option>
+                    <option value="1950">1950</option>
+                    <option value="1949">1949</option>
+                    <option value="1948">1948</option>
+                    <option value="1947">1947</option>
+                </select>
+</td>
+                </tr>                {{!--<tr><td><input type="number" placeholder="MM" name="pmonth" required ></td><td><input type="number" placeholder="DD" name="pday" required ></td><td><input type="number" placeholder="YY" name="pyear" required ></td><td><i class="fa fa-star marginStar1" aria-hidden="true"></i></td></tr>--}}
+
+                <tr><td>Gender</td></tr>
+                <tr><td><input type="radio" name="pgender"  value="Male" required>Male</td><td><input type="radio"name="pgender"  value="Female" required >Female</td><td><i class="fa fa-star marginStar1" aria-hidden="true"></i></td> </tr>
+
+                <tr><td>Insurance Plan</td><td></td></tr>
+                <tr><td> <select class="width" name="pinsurance" required >
+                    <option>No Insurance Plan</option>
+                    <option>Aetna</option>
+                    <option>Anthem</option>
+                    <option>Cigna</option>
+                    <option>CignaDental</option>
+                    <option>Humana</option>
+                    <option>Harvard Pilgrim</option>
+                    <option>United Healthcare</option>
+                    <option>Multiplan</option>
+                    <option>Metlife</option>
+                    <option>Medicare</option>
+                    <option>Tufts</option>
+                    <option>Bluecross</option>
+                    <option>Healthnet</option>
+                    <option>West Health</option>
+                    <option>Aetna Multiplan</option>
+
+
+                </select>
+                </td><td class="margin"><i class="fa fa-star marginStar" aria-hidden="true"></i></td></tr>
+
+                {{!--<tr><td><input class="signUpInput" type="text" name="pinsurance" required></td></tr>--}}
+                <tr><td><button class="w3-button w3-teal signUpSubmit"  id="myBtn1" onsubmit="return EmailValidation()" >Sign Up</button>   </td></tr>
+
+                <tr><td><i class="fa fa-star marginStar2" aria-hidden="true"></i>REQUIRED FIELDS</td></tr>
+
+            </table>
+        </form>
+        <table class="signUpMargin"> <tr><td><button class="w3-button w3-teal signUpSubmit"  id="myBtn1" href="login"> Login</button></td></tr>
+                <tr><td><button class="w3-button w3-teal signUpSubmit"  id="myBtn1">Login with google</button>   </td></tr></table>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+            <script>
+
+            function EmailValidation() {
+
+
+
+            var x = document.myForm.email.value;
+            if (!x.match(/[a-z0-9._%+-]+@[a-z0-9]+\.[a-z]{2,3}$/)) {
+
+
+            alert("Email address not valid");
+            return false
+
+            }
+
+
+
+//            else {
+//
+//                alert("Signed Up Successfully!");
+//
+//            }
+            }
+
+
+            </script>
+
+        </form>
+
+
+
+
+    </div>
+
+
+</div>
+
+{{!--<script>--}}
+
+    {{!--function EmailValidation() {--}}
+
+
+
+        {{!--var x = document.myForm.email.value;--}}
+        {{!--if (!x.match(/[a-z0-9._%+-]+@[a-z0-9]+\.[a-z]{2,3}$/)) {--}}
+
+
+            {{!--alert("Email address not valid");--}}
+            {{!--return false--}}
+
+        {{!--}--}}
+
+
+
+        {{!--else {--}}
+            {{!--document.getElementById("myForm").submit()--}}
+        {{!--}--}}
+    {{!--}--}}
+
+
+{{!--</script>--}}
+</html>

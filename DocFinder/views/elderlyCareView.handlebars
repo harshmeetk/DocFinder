@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html style="overflow: hidden" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script
+            src="http://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script >
+        $(function(){
+            $('.menuToggle').on('click', function(){
+                $('.menu').toggle(300, function(){
+                    if($(this).css('display') === 'none'){
+                        $(this).removeAttribute('style');
+                    }
+                });
+            });
+        });</script>
+
+</head>
+
+<!DOCTYPE html>
+<html lang="en" style="overflow: hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<nav>
+    <div class="wrapper">
+        <div class="menuToggle"><img src="img/menu.png" alt="menu"></div>
+        <ul class="menu clearfix">
+            <li> <a href="#">Find a Support Group</a></li>
+            <li><a href="#">Diagnosis Dictionary</a></li>
+            <li><div class="dropdown">
+                <a href="#">For Caregivers</a>
+                <div class="dropdown-content">
+                    <a href="">Register as\</a>
+                    <a href="">Social Skills</a>
+                    <p style="font-weight: bold; font-family: 'Palanquin Dark', sans-serif;">Personality</p>
+                    <p>Passive Aggression</p>
+                    <p> Shyness</p>
+                    <p style="font-weight: bold; font-family: 'Palanquin Dark', sans-serif;">Personal Growth</p>
+                    <p>Goal Setting</p>
+                    <p>Positive Psychology</p>
+                    <p>Happiness</p>
+                    <p>Anger Management</p>
+                    <p>Stress Management</p>
+                    <p>Procastination</p>
+
+
+
+                </div>
+            </div></li>
+            <li><a href="#">Wellness survey</a></li>
+
+
+
+        </ul>
+    </div>
+</nav>
+
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Login </a>
+    <a href="#">Register</a>
+    <a href="#">Find a Physician </a>
+    <a href="#">Home</a>
+    <a href="#">Paediatric Care</a>
+    <a href="#">Elderly Care</a>
+
+
+
+
+
+</div>
+
+
+<span style="font-size:30px; margin-top:-10%; padding:1%; margin-left:-1%;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>

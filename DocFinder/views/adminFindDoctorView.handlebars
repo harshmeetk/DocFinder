@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow: hidden" xmlns="http://www.w3.org/1999/html">
+<head>
+
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+
+    <div>
+        <span><a href="/">Sign Out</a><p class="cityGradient">Hello Admin</p> </span>
+    </div>
+    {{!--{{#each data}}<span class="cityGradient">Welcome {{this.patient_first_name}}</span>--}}
+    {{!--{{/each}}--}}
+
+
+
+</head>
+
+
+
+
+
+<div id="parent_div" >
+    <div class= "background"><img src="/images/doctor.jpg"></div>
+
+
+
+
+
+
+
+    <ul>
+
+        <li  class="li active"><a href="/admin"><i class="fa fa-user-md" aria-hidden="true"></i>My Dashboard</a></li>
+
+        <li class="li active"><a href="/doctor"><i class="fa fa-user-md" aria-hidden="true"></i>Add New Doctor Information</a></li>
+        <li class="li active">
+            {{!--<a href="/specialityDoctor"><i class="fa fa-user-md" aria-hidden="true"></i>Add Speciality Information</a>--}}
+        </li>
+        <li id="grey" class="li active"><a href="/adminFindDoctor"><i class="fa fa-user-md" aria-hidden="true"></i>Find Doctors</a> </li>
+
+        <li class="li active"><a href="/deleteView"><i class="fa fa-user-md" aria-hidden="true"></i>Delete Doctor </a> </li>
+
+
+
+    </ul>
+
+
+
+</div>
+
+<div class="admin">
+
+    <h1>FIND DOCTOR RECORDS:(Search by speciality)</h1>
+
+
+    <form action="/adminDisplay" method="get">
+        <select name="doc_speciality1" class=" padding-searchbar1">
+
+            <option>Dental-Therapist</option>
+            <option>Dermatologist</option>
+            <option>Allergic Cough
+            </option>
+            <option>allergist</option>
+            <option>allergy-immunology-allergy</option>
+            <option>Dentist</option>
+            <option>Cardiology</option>
+            <option>Endocrinology-Diabetes-Metabolism</option>
+            <option>Pulmonary Function Technologist</option>
+            <option>pain-medicine-physiatrist</option>
+            <option>Medical Oncology</option>
+            <option>Neuropathology</option>
+            <option>Ear-Nose-Throat</option>
+            <option>pain-management-doctor</option>
+            <option>vision-therapy-optometrist</option>
+            <option>primary-care-nurse-practitioner</option>
+            <option>surgical-oncologist</option>
+            <option>gynecologic-oncologist</option>
+            <option>Urologist</option>
+            <option>neonatal-nurse-practitioner</option>
+
+
+        </select>
+        <button class="search_button" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+
+    </form>
+</div>
+</html>

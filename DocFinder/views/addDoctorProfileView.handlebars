@@ -1,0 +1,297 @@
+
+{{!--<script id="p" type="text/x-handlebars-template">--}}
+<!DOCTYPE html>
+<html style="overflow: hidden" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+    <div>
+        <span><a href="/">Sign Out</a>  <p class="cityGradient">Hello Admin</p>
+         </span>
+    </div>
+
+</head>
+
+<body>
+
+<div id="parent_div" >
+    <div class= "background"><img src="/images/doctor.jpg"></div>
+
+
+
+
+
+
+
+
+    <ul>
+
+    <li class="li active"> <a href="/admin"><i class="fa fa-user-md" aria-hidden="true"></i>My Dashboard</a></li>
+
+    <li id="grey" class="li active"><a href="/doctor"><i class="fa fa-user-md" aria-hidden="true"></i>Add New Doctor Information</a></li>
+    <li class="li active">
+        {{!--<a href="/specialityDoctor"><i class="fa fa-user-md" aria-hidden="true"></i>Add Speciality Information</a>--}}
+    </li>
+    <li class="li active"><a href="/adminFindDoctor"><i class="fa fa-user-md" aria-hidden="true"></i>Find Doctors</a> </li>
+        <li class="li active"><a href="/deleteView"><i class="fa fa-user-md" aria-hidden="true"></i>Delete Doctor </a> </li>
+
+
+
+
+    </ul>
+
+
+
+
+
+
+</div>
+
+
+<div class="table-responsive">
+    <div>
+        <div><h1>ADD NEW DOCTOR INFORMATION HERE:</h1>
+
+
+            <form method="post" action="/saveDoctor" name="myform" onsubmit="alert('Doctor record added successfully!!')">
+                <table class="table table-condensed">
+
+                    <tr>
+                        <th>Doctor Name:</th>
+                        <td><input type="text" name="dname" required
+                                   placeholder="Enter doctor name" maxlength="30" id="id1"></td>
+                    </tr>
+
+                    <tr>
+                        <th width="300">Doctor Title:</th>
+                        <td><input type="text" name="dtitle" required
+                                   placeholder="Enter doctor title" maxlength="10" id="id2"></td>
+                    </tr>
+
+                    <tr>
+                        <th width="300">Doctor Speciality :</th>
+                        {{!--<td><input type="text" name="speciality" required--}}
+                                   {{!--placeholder="Enter doctor's speciality" maxlength="30" id="id3"></td>--}}
+<td>
+<select class="selectWidth" name="speciality" required id="id3">
+                        <option>Dental-Therapist</option>
+                        <option>Dermatologist</option>
+                        <option>Allergic Cough
+                        </option>
+                        <option>allergist</option>
+                        <option>allergy-immunology-allergy</option>
+                        <option>Dentist</option>
+                        <option>Cardiology</option>
+                        <option>Endocrinology-Diabetes-Metabolism</option>
+                        <option>Pulmonary Function Technologist</option>
+                        <option>pain-medicine-physiatrist</option>
+                        <option>Medical Oncology</option>
+                        <option>Neuropathology</option>
+                        <option>Ear-Nose-Throat</option>
+                        <option>pain-management-doctor</option>
+                        <option>vision-therapy-optometrist</option>
+                        <option>primary-care-nurse-practitioner</option>
+                        <option>surgical-oncologist</option>
+                        <option>gynecologic-oncologist</option>
+                        <option>Urologist</option>
+                        <option>neonatal-nurse-practitioner</option>
+
+
+                        </select>
+</td>
+                    </tr>
+
+
+                    <tr>
+                        <th width="300">Doctor Contact:</th>
+                        <td><input type="tel" name="docnumber" required
+                                   placeholder="Enter doctor contact" maxlength="10" id="id4"></td>
+                    </tr>
+
+
+                    <tr>
+                        <th width="300">Doctor Rating :</th>
+
+                        <td>
+                            <select class="selectWidth" name="drating" required id="id5">
+                                  <option>4.5</option>
+                                  <option>5 </option>
+                            </select></td>
+
+
+                    </tr>
+
+                    <tr>
+                        <th width="300">Doctor Address-City :</th>
+
+
+                        <td><select class="selectWidth" name="city" required id="id6">
+                            <option>Abington</option>
+                            <option>Acton
+                            </option>
+                            <option>Arlington
+                            </option>
+                            <option>Attleboro
+                            </option>
+                            <option>Sudbury
+                            </option>
+                            <option>Wilbraham
+                            </option>
+                            <option>Berkeley
+                            </option>
+                            <option>Cambridge
+                            </option>
+                            <option>Denvers
+                            </option>
+                            <option>Marlborough
+                            </option>
+                            <option>Everett
+                            </option>
+                            <option>Concord
+                            </option>
+                            <option>Worcester
+                            </option>
+                            <option>Quincy
+                            </option>
+                            <option>Waltham
+                            </option>
+                            <option>Bridgewater
+                            </option>
+                            <option>Norwood
+                            </option>
+                            <option>
+                                Boston
+
+                            </option>
+                            <option>Taunton
+                            </option>
+                            <option>
+                                Danvers
+
+
+                            </option>
+                            <option>Stoneham</option>
+
+                        </select></td>
+                        {{!--<td><input type="text" name="city" required--}}
+                                   {{!--placeholder="Enter doctor's address city" maxlength="200" id="id6"></td>--}}
+
+
+
+
+                    </tr>
+                    <tr>
+                        <th width="300">Doctor Address-State :</th>
+                        <td><input type="text" name="state1" required
+                                   placeholder="Enter doctor's address state" maxlength="100" id="id7"></td>
+                    </tr>
+
+                    <tr>
+                        <th width="300">Doctor Address-Street :</th>
+                        <td><input type="text" name="street" required
+                                   placeholder="Enter doctor's address street" maxlength="100" id="id8"></td>
+                    </tr>
+                    <tr>
+                        <th width="300">Doctor Address-zip :</th>
+                        <td><input type="text" pattern="[0-9]{4}" name="zip" required
+                                   placeholder="Enter doctor's address zip" maxlength="10" id="id9"></td>
+                    </tr>
+
+
+                    <tr>
+                        <th>Doctor's Background Informaton:</th>
+                        <td><input type="text" name="dedu" required
+                                   placeholder="Enter doctor's education and background " id="id10"></td>
+                    </tr>
+
+
+                    <tr>
+                        <th width="300">Insurance :</th>
+                        {{!--<td><input type="text" name="dinsurance" required--}}
+                                   {{!--placeholder="Enter insurances " maxlength="20" id="id11"></td>--}}
+
+                        <td> <select class="selectWidth" name="dinsurance" required>
+                            <option>Aetna
+
+                            </option>
+                            <option>Humana
+
+                            </option>
+                            <option>Cigna
+
+                            </option>
+                            <option>united healthcare
+
+                            </option>
+                            <option>Harvard Pilgrim
+
+                            </option>
+                            <option>Anthem
+
+                            </option>
+                            <option>medicare
+
+                            </option>
+                            <option>metlife
+
+                            </option>
+                            <option>multiplan-phcsppo
+
+                            </option>
+                            <option>Cigna Dental
+
+                            </option>
+                            <option>Tufts
+
+                            </option>
+                            <option>Bluecross
+
+                            </option>
+                            <option>Healthnet
+
+                            </option>
+                            <option>West-Health
+
+                            </option>
+                            <option>Aetna-Multiplan
+                            </option>
+
+                        </select></td>
+
+
+                    </tr>
+
+                    <tr>
+                        <th width="300">Image of the Doctor :</th>
+                        <td><input type="url" name="image" required
+                                   placeholder="Enter image URL " id="id12"></td>
+                    </tr>
+
+                    {{!--<tr>--}}
+                        {{!--<th width="300">Average Payment of Doctor :</th>--}}
+                        {{!--<td><input type="text" name="dpayment" required--}}
+                                   {{!--placeholder="Enter average consulation payment " maxlength="3"></td>--}}
+                    {{!--</tr>--}}
+
+
+                    <tfooter>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="submit" value="Save"
+                                       class="btn btn-success" id="add"  onsubmit=" alert('Doctor Record Added Sucessfully')">
+                                <input type="button" value="Cancel"
+                                       class="btn btn-danger">
+                            </td>
+                        </tr>
+                    </tfooter>
+                </table>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>

@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html style="overflow: hidden" lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+
+    <div>
+        <span><a href="/">Sign Out</a><p class="cityGradient">Hello Admin</p> </span>
+    </div>
+        {{!--{{#each data}}<span class="cityGradient">Welcome {{this.patient_first_name}}</span>--}}
+        {{!--{{/each}}--}}
+
+
+
+</head>
+
+
+
+
+<body>
+
+<div id="parent_div" >
+    <div class= "background"><img src="/images/doctor.jpg"></div>
+
+
+
+
+
+
+
+    <ul>
+
+    <li id="grey" class="li active"><a href="/admin"><i class="fa fa-user-md" aria-hidden="true"></i>My Dashboard</a></li>
+
+        <li class="li active"><a href="/doctor"><i class="fa fa-user-md" aria-hidden="true"></i>Add New Doctor Information</a></li>
+        <li class="li active">
+            {{!--<a href="/specialityDoctor"><i class="fa fa-user-md" aria-hidden="true"></i>Add Speciality Information</a>--}}
+        </li>
+        <li class="li active"><a href="/adminFindDoctor"><i class="fa fa-user-md" aria-hidden="true"></i>Find Doctors</a> </li>
+
+        <li class="li active"><a href="/deleteView"><i class="fa fa-user-md" aria-hidden="true"></i>Delete Doctor </a> </li>
+
+
+
+    </ul>
+
+
+
+</div>
+
+<div class="displayOl">
+
+</div>
+<div class="alignment">
+        <button class="col-3" id="message" onclick="return"><i class="fa fa-envelope fa-3x"aria-hidden="true"> Check<p>
+            Messages</p></i></button>
+
+
+        <button class="col-3" id="notification" onclick="return" data-model="modal-window-two"><i
+                class="fa fa fa-bullhorn fa-3x" aria-hidden="true"> Check<p> Notifications</p></i></button>
+
+    <button class="col-3"><i class="fa fa-tasks fa-3x" aria-hidden="true" onclick="return" id="task">My <p>Tasks</p></i></button>
+
+
+    <button style="" class="col-3"><i class="fa fa fa-flag fa-3x" aria-hidden="true" id="new" onclick="return">New <p>Anouncements</p></i></button>
+    <button class="col-3"><i class="fa fa-envelope fa-3x" aria-hidden="true" id="email" onclick="return">Send<p> Email</p></i></button>
+    <button class="col-3"><i class="fa fa fa-book  fa-3x" aria-hidden="true" id="goal" onclick="return">Set<p> Goals</p></i></button>
+
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+<span class="close">&times;</span>
+        <div class="modalHeader">MY MESSAGES</div>
+
+        <p class="pBold">You have 0 unread messages</p>
+</div>
+</div>
+<script>
+var modal = document.getElementById('myModal');
+
+var btn = document.getElementById("message");
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+modal.style.display = "block";
+};
+
+span.onclick = function() {
+modal.style.display = "none";
+};
+
+window.onclick = function(event) {
+if (event.target == modal) {
+modal.style.display = "none";
+}
+} ;
+</script>
+
+
+
+
+<div id="myModalNotification" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modalHeader">MY NOTIFICATIONS</div>
+        <p class="pBold"> You have 0 new notifications</p>
+    </div>
+</div>
+
+<script>
+    var modal1 = document.getElementById('myModalNotification');
+
+    var btn1 = document.getElementById("notification");
+
+    var span1 = document.getElementsByClassName("close")[1];
+
+    btn1.onclick = function() {
+        modal1.style.display = "block";
+    };
+
+    span1.onclick = function() {
+        modal1.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal1.style.display = "none";
+        }
+    } ;
+</script>
+
+
+<div id="taskNotification" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modalHeader" style="text-align: center;">MY TASKS</div>
+        <table>
+            <tr><td><a href="#"> Dummy Task 1</a></td></tr>
+            <tr><td><a href="#"> Dummy Task 1</a></td></tr>
+            <tr><td><a href="#"> Dummy Task 1</a></td></tr>
+            <tr><td><a href="#"> Dummy Task 2</a></td></tr>
+            <tr><td><a href="#"> Dummy Task 3</a></td></tr>
+            <tr><td><a href="#"> Dummy Task 4</a></td></tr>
+            <tr><td><a href="#"> Dummy Task 5</a></td></tr>
+            <tr><td><a href="#"> Dummy Task 6</a></td></tr>
+            <tr><td><a href="#"> Dummy Task 7</a></td></tr>
+            <tr><td><a href="#"> Dummy Task 8</a></td></tr>
+            <tr><td><a href="#"> Dummy Task 9</a></td></tr>
+
+
+
+        </table>
+    </div>
+</div>
+
+
+<script>
+    var modal2 = document.getElementById('taskNotification');
+
+    var btn2 = document.getElementById("task");
+
+    var span2 = document.getElementsByClassName("close")[2];
+
+    btn2.onclick = function() {
+        modal2.style.display = "block";
+    };
+
+    span2.onclick = function() {
+        modal2.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal2.style.display = "none";
+        }
+    } ;
+
+
+
+</script>
+
+
+<div id="announcement" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modalHeader" style="text-align: center;">NEW ANOUNCEMENTS</div>
+       <p class="pBold pBolder" >Lorem Ipsum is simply dummy text of the
+           printing and typesetting industry. Lorem Ipsum has been the industry's standard
+           dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+           </p>
+    </div>
+</div>
+
+
+<script>
+    var modal3 = document.getElementById('announcement');
+
+    var btn3 = document.getElementById("new");
+
+    var span3 = document.getElementsByClassName("close")[3];
+
+    btn3.onclick = function() {
+        modal3.style.display = "block";
+    };
+
+    span3.onclick = function() {
+        modal3.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal3.style.display = "none";
+        }
+    } ;
+
+
+
+</script>
+
+
+
+
+<div id="mailto" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modalHeader" style="text-align: center;">SEND EMAIL</div>
+        <p class="pBold" > SEND EMAIL HERE:<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"><br> Mail</a>
+        </p>
+    </div>
+</div>
+
+
+<script>
+    var modal4 = document.getElementById('mailto');
+
+    var btn4 = document.getElementById("email");
+
+    var span4 = document.getElementsByClassName("close")[4];
+
+    btn4.onclick = function() {
+        modal4.style.display = "block";
+    };
+
+    span4.onclick = function() {
+        modal4.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal4.style.display = "none";
+        }
+    } ;
+
+
+
+</script>
+
+<div id="goals" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modalHeader" style="text-align: center;">GOALS:CREATE NEW EVENT</div>
+
+        <div class="month">
+            <h2 style="text-align: center">                    MAY 2017
+            </h2>
+
+        </div>
+
+        <ul class="weekdays">
+        <li>Mo</li>
+        <li>Tu</li>
+        <li>We</li>
+        <li>Th</li>
+        <li>Fr</li>
+        <li>Sa</li>
+        <li>Su</li>
+    </ul>
+
+        <ul class="days">
+            <li >1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>11</li> <li>12</li> <li>13</li> <li>14</li> <li>15</li> <li>16</li> <li>17</li> <li>18</li> <li>19</li> <li>20</li>
+            <li>21</li> <li>22</li> <li>23</li> <li>24</li> <li>25</li> <li>26</li> <li>27</li> <li>28</li> <li>29</li>
+            <li>30</li>
+        </ul>
+
+    </div>
+</div>
+
+
+<script>
+    var modal5 = document.getElementById('goals');
+
+    var btn5 = document.getElementById("goal");
+
+    var span5 = document.getElementsByClassName("close")[5];
+
+    btn5.onclick = function() {
+        modal5.style.display = "block";
+    };
+
+    span5.onclick = function() {
+        modal5.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal5.style.display = "none";
+        }
+    } ;
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>

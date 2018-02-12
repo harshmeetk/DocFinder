@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css"
+          integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+    <div>
+        <span><a href="/">Sign Out</a>  <p class="cityGradient">Hello Admin</p>
+         </span>
+    </div>
+
+</head>
+
+<body>
+
+<div id="parent_div">
+    <div class="background"><img src="/images/doctor.jpg"></div>
+
+    <ul>
+
+        <li class="li active"><a href="/admin"><i class="fa fa-user-md" aria-hidden="true"></i>My Dashboard</a></li>
+
+        <li class="li active"><a href="/doctor"><i class="fa fa-user-md" aria-hidden="true"></i>Add New Doctor
+            Information</a></li>
+        <li class="li active">
+            {{!--<a href="/specialityDoctor"><i class="fa fa-user-md" aria-hidden="true"></i>Add Speciality Information</a>--}}
+        </li>
+        <li class="li active"><a href="/adminFindDoctor"><i class="fa fa-user-md" aria-hidden="true"></i>Find
+            Doctors</a></li>
+
+        <li id="grey" class="li active"><a href="/deleteView"><i class="fa fa-user-md" aria-hidden="true"></i>Delete
+            Doctors</a></li>
+    </ul>
+
+
+</div>
+
+
+<div class="table-responsive">
+    {{#each data}}
+    <form method="post" action="/delete" name="myform" onsubmit="return CheckmyForm()">
+
+        <div class="media">
+            <ul class="nobullet">
+                <li><img class="d-flex mr-3 imageWidth" src="{{this.doc_image}}" alt="Doctor"></li>
+                <li><input type="text" value=" {{this._id}}" hidden name="doc_id"></li>
+                {{!--<li><input type="text" value=" {{this.doc_name}}" hidden name="doc_Name"></li>--}}
+                <h5 class="mt-0"><br>{{this.doc_name}}, {{this.doc_title}}</h5>
+                <li>{{this.doc_speciality}}</li>
+                <li><input type="submit" value="Delete this record"></li>
+            </ul>
+            {{!--<div class="media-body">--}}
+                {{!--<ul class="nobullet">--}}
+                    {{!--<li><p>{{this.doc_edu}}</p></li>--}}
+                {{!--</ul>--}}
+            </div>
+        {{!--<tr>--}}
+        {{!--<th>Enter Doctor Name For Deletion:</th></tr>--}}
+        {{!--<tr>  <td><input type="text" name="docname" required--}}
+        {{!--placeholder="Enter doctor name" maxlength="30"></td>--}}
+        {{!--</tr>--}}
+        {{!--<tr>  <td> <input type="submit" value="Delete"  id="delete"--}}
+        {{!--class="btn btn-success" onsubmit="return CheckmyForm()"></td></tr>--}}
+        {{!--<td> <input   type="button" value="Cancel"--}}
+        {{!--class="btn btn-danger" ></td>--}}
+        {{!--</tr>--}}
+        {{!--</table>--}}
+
+    </form>
+        {{/each}}
+
+    </div>
+
+
+<script>
+    function CheckmyForm() {
+
+        if (document.myform.docname.value.length > 0) {
+            alert("Doctor Deleted Sucessfully!.");
+
+        } else {
+
+            alert("Please fill the form!.");
+
+        }
+
+    }
+</script>
+</body>

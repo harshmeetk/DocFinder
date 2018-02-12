@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="dist/jquery.convform.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homepage</title>
+
+
+</head>
+<h4 style=" float:right;margin-top: -50px; margin-right: 30px;color: whitesmoke"><a href=""> Logout</a></h4>
+<script>
+//    Extracting the Users object ID from the URL
+    var addURL = function () {
+        var url = window.location.href;
+        var id = url.split(':')[2].split('/')[1];
+        document.getElementById('patiendId').value=id;
+        var temp=document.getElementsByName('city');
+        for(var i in temp){
+            temp[i].href=temp[i].href+'&patindId='+id;
+        }
+    }
+</script>
+
+<body onload="addURL()">
+<div  class="wrapper">
+    <ul class="menu clearfix">
+        {{!--<li>  <a href="newSignUp" >REGISTER</a></li>--}}
+       <li> <a href="/">HOME</a></li>
+        <li><a href="/resources">RESOURCES</a></li>
+        {{!--<li> <a href=" elderlyCareView">ELDERLY CARE</a></li>--}}
+     <li>   <a href="therapyCareView">THERAPY</a></li>
+        <li>   <a href="baby">PAEDRIATRIC CARE</a></li>
+        <li>   <a href="{{this._id}}userLandingPage">MY DASHBOARD</a></li>
+
+
+
+    </ul>
+</div>
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Live Chat</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+
+</head>
+<body>
+
+<div id="live-chat">
+
+    <header class="clearfix">
+
+        <a href="#" class="chat-close">x</a>
+
+        <h4>John Doe</h4>
+
+        <span class="chat-message-counter">3</span>
+
+    </header>
+
+    <div class="chat">
+
+        <div class="chat-history">
+
+            <div class="chat-message clearfix">
+
+                <img src="http://lorempixum.com/32/32/people" alt="" width="32" height="32">
+
+                <div class="chat-message-content clearfix">
+
+                    <span class="chat-time">13:35</span>
+
+                    <h5>John Doe</h5>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, explicabo quasi ratione odio dolorum harum.</p>
+
+                </div> <!-- end chat-message-content -->
+
+            </div> <!-- end chat-message -->
+
+            <hr>
+
+            <div class="chat-message clearfix">
+
+                <img src="http://gravatar.com/avatar/2c0ad52fc5943b78d6abe069cc08f320?s=32" alt="" width="32" height="32">
+
+                <div class="chat-message-content clearfix">
+
+                    <span class="chat-time">13:37</span>
+
+                    <h5>Marco Biedermann</h5>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nulla accusamus magni vel debitis numquam qui tempora rem voluptatem delectus!</p>
+
+                </div> <!-- end chat-message-content -->
+
+            </div> <!-- end chat-message -->
+
+            <hr>
+
+            <div class="chat-message clearfix">
+
+                <img src="http://lorempixum.com/32/32/people" alt="" width="32" height="32">
+
+                <div class="chat-message-content clearfix">
+
+                    <span class="chat-time">13:38</span>
+
+                    <h5>John Doe</h5>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+
+                </div> <!-- end chat-message-content -->
+
+            </div> <!-- end chat-message -->
+
+            <hr>
+
+        </div> <!-- end chat-history -->
+
+        <p class="chat-feedback">Your partner is typing…</p>
+
+        <form action="#" method="post">
+
+            <fieldset>
+
+                <input type="text" placeholder="Type your message…" autofocus>
+                <input type="hidden">
+
+            </fieldset>
+
+        </form>
+
+    </div> <!-- end chat -->
+
+</div> <!-- end live-chat -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+
+<script>
+
+    (function() {
+
+        $('#live-chat header').on('click', function() {
+
+            $('.chat').slideToggle(300, 'swing');
+            $('.chat-message-counter').fadeToggle(300, 'swing');
+
+        });
+
+        $('.chat-close').on('click', function(e) {
+
+            e.preventDefault();
+            $('#live-chat').fadeOut(300);
+
+        });
+
+    }) ();
+</script>
+
+
+
+<div>
+    <img src=./images/9.jpg alt="Girl in a jacket"  style=" margin-top: -17px; width:100%">
+</div>
+<div >
+
+</div>
+<h1 class="title">Find physicians and clinicians</h1>
+
+
+
+
+<div class="row">
+
+
+    <div class="col-2" style="margin-left: 100px" ><input style="width: 100%;height: 55px;   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);"  type="search" PLACEHOLDER="Enter Location" > </div>
+
+    <div class="col-4"><input style="width: 100%;height:55px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);"  type="search" placeholder="Enter doctor speciality, condition or disease"> </div>
+
+
+
+    <div class="col-6" style="margin-left: -350px">
+
+        <form id="speciality"  action='/speciality' method="get">
+        <select style="width: 50%;height: 55px;   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);color: #2b542c" name="doc_speciality1">
+
+            <option >Dental-Therapist</option>
+            <option>Dermatologist</option>
+            <option>Allergic Cough
+            </option>
+            <option>allergist</option>
+            <option>allergy-immunology-allergy</option>
+            <option>Dentist</option>
+            <option>Cardiology</option>
+            <option>Endocrinology-Diabetes-Metabolism</option>
+            <option>Pulmonary Function Technologist</option>
+            <option>pain-medicine-physiatrist</option>
+            <option>Medical Oncology</option>
+            <option>Neuropathology</option>
+            <option>Ear-Nose-Throat</option>
+            <option>pain-management-doctor</option>
+            <option>vision-therapy-optometrist</option>
+            <option>primary-care-nurse-practitioner</option>
+            <option>surgical-oncologist</option>
+            <option>gynecologic-oncologist</option>
+            <option>Urologist</option>
+            <option>neonatal-nurse-practitioner</option>
+
+        </select>
+
+        <input type="text" hidden id="patiendId" name="patiendId">
+        <div style="margin-left:100%"><button style="height:55px;background-color: transparent; border: lightgray;"  > <i class="fa fa-search-plus fa-4x" aria-hidden="true"></i>
+        </button></div>
+        </button>
+    </form>
+    </div>
+
+
+</div>
+
+<!--<button class="search_button"></button>-->
+
+</div>
+
+
+
+<div class="marginSetter">
+<div class="marginTopTable">
+    <table class=" w3-table w3-centered marginTopTable">
+        <tr>
+            <th>Search by City</th>
+            <th>Search by Insurance</th>
+        </tr>
+        <tr>
+        <tr>
+            <td >
+
+                <a name="city" href="/city?city=Abington"> Abington</a>
+            </td>
+            <td><a name="city" href="/insurance?ins=Aetna">Aetna</a></td>
+        </tr>
+        <tr>
+            <td ><a name="city" href="/city?city=Acton">Acton</a></td>
+            <td><a name="city"href="/insurance?ins=Humana">Humana</a></td>
+        </tr>
+        <tr>
+            <td><a name="city"href="/insurance?ins=Cigna">Cigna</a></td>
+        </tr>
+
+        <tr>
+            <td><a name="city"href="/city?city=Attleboro">Attleboro</a></td>
+            <td><a name="city"href="/insurance?ins=united healthcare">United Healthcare</a></td>
+        </tr>
+        <tr>
+            <td><a name="city"href="/city?city=Sudbury">Sudbury</a></td>
+            <td><a name="city" href="/insurance?ins=Harvard Pilgrim">Harvard Pilgrim</a></td>
+        </tr>
+        <tr>
+            <td><a name="city"href="/city?city=Wilbraham">Wilbraham</a></td>
+            <td><a name="city"href="/insurance?ins=Anthem">Anthem</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Berkeley">Berkeley</a></td>
+            <td><a name ="city"href="/insurance?ins=medicare">Medicare</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Cambridge">Cambridge</a></td>
+            <td><a name="city" href="/insurance?ins=metlife">Metlife</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Denvers">Denvers</a></td>
+            <td><a name="city" href="/insurance?ins=multiplan-phcsppo">Multiplan-phcsppo</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Marlborough">Marlborough</a></td>
+            <td><a name="city" href="/insurance?ins=Cigna Dental">Cigna Dental</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Everett">Everett</a></td>
+            <td><a name="city" href="/insurance?ins=Tufts">Tufts</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Concord">Concord</a></td>
+            <td><a name="city" href="/insurance?ins=Bluecross">Bluecross</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Worcester">Worcester</a></td>
+            <td><a name="city" href="/insurance?ins=Healthnet">Healthnet</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Quincy">Quincy</a></td>
+            <td><a name="city" href="/insurance?ins=West-Health">West Health</a></td>
+
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Waltham">Waltham</a></td>
+            <td><a name="city" href="/insurance?ins=Aetna-Multiplan">Aetna Multiplan</a></td>
+
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Bridgewater">Bridgewater</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Norwood">Norwood</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Boston">Boston</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Taunton">Taunton</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Danvers">Danvers</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Stoneham">Stoneham</a></td>
+
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=North Adams">North Adams</a></td>
+
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Springfield">Springfield</a></td>
+
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Hyannis">Hyannis</a></td>
+
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Attleboro Falls">Attleboro Falls</a></td>
+
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=North Andover">North Andover</a></td>
+
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Stoneham">Stoneham</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Medford">Medford</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Nashua">Nashua</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Chestnut Hill">Chestnut Hill</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Peabody">Peabody</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Needham">Needham</a></td>
+        </tr>
+        <tr>
+            <td><a name="city" href="/city?city=Cambridge">Cambridge</a></td>
+        </tr>
+
+
+    </table>
+</div>
+</div>
+
+</body>
+</html>
